@@ -21,7 +21,7 @@ namespace Cottle.Builtins
 
 		public static readonly IFunction	operatorDiv = new NativeFunction ((values) =>
 		{
-			decimal denominator;
+			double denominator;
 
 			denominator = values[1].AsNumber;
 
@@ -54,7 +54,7 @@ namespace Cottle.Builtins
 
 		public static readonly IFunction	operatorMod = new NativeFunction ((values) =>
 		{
-			decimal denominator;
+			double denominator;
 
 			denominator = values[1].AsNumber;
 

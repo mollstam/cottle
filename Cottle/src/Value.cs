@@ -19,7 +19,7 @@ namespace Cottle
 			get;
 		}
 
-		public abstract decimal			AsNumber
+		public abstract double			AsNumber
 		{
 			get;
 		}
@@ -172,11 +172,6 @@ namespace Cottle
 		public static implicit operator Value (char value)
 		{
 			return new StringValue (value);
-		}
-
-		public static implicit operator Value (decimal value)
-		{
-			return new NumberValue (value);
 		}
 
 		public static implicit operator Value (double value)

@@ -1,8 +1,7 @@
-﻿using System.Globalization;
-
+﻿
 namespace Cottle.Values
 {
-	public sealed class NumberValue : ScalarValue<decimal>
+	public sealed class NumberValue : ScalarValue<double>
 	{
 		#region Properties
 
@@ -14,7 +13,7 @@ namespace Cottle.Values
 			}
 		}
 
-		public override decimal			AsNumber
+		public override double			AsNumber
 		{
 			get
 			{
@@ -26,7 +25,7 @@ namespace Cottle.Values
 		{
 			get
 			{
-				return this.value.ToString (CultureInfo.InvariantCulture);
+				return this.value.ToString ();
 			}
 		}
 
@@ -43,37 +42,32 @@ namespace Cottle.Values
 		#region Constructors / Public
 
 		public	NumberValue (byte value) :
-			this ((decimal)value)
-		{
-		}
-
-		public	NumberValue (decimal value) :
-			base (value, (source) => source.AsNumber)
+			this ((double)value)
 		{
 		}
 
 		public	NumberValue (double value) :
-			this ((decimal)value)
+			base (value, (source) => source.AsNumber)
 		{
 		}
 
 		public	NumberValue (float value) :
-			this ((decimal)value)
+			this ((double)value)
 		{
 		}
 
 		public	NumberValue (int value) :
-			this ((decimal)value)
+			this ((double)value)
 		{
 		}
 
 		public	NumberValue (long value) :
-			this ((decimal)value)
+			this ((double)value)
 		{
 		}
 
 		public	NumberValue (short value) :
-			this ((decimal)value)
+			this ((double)value)
 		{
 		}
 
@@ -83,7 +77,7 @@ namespace Cottle.Values
 
 		public override string	ToString ()
 		{
-			return this.value.ToString (CultureInfo.InvariantCulture);
+			return this.value.ToString ();
 		}
 
 		#endregion

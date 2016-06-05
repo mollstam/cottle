@@ -67,6 +67,8 @@ namespace Cottle.Builtins
 				default:
 					return VoidValue.Instance;
 			}
+
+			return VoidValue.Instance;
 		}, 2);
 
 		private static readonly IFunction	functionCat = new NativeFunction ((values) =>
@@ -424,7 +426,7 @@ namespace Cottle.Builtins
 
 		private static readonly IFunction	functionMaximum = new NativeFunction ((values) =>
 		{
-			decimal max;
+			double max;
 
 			max = values[0].AsNumber;
 
@@ -436,7 +438,7 @@ namespace Cottle.Builtins
 
 		private static readonly IFunction	functionMinimum = new NativeFunction ((values) =>
 		{
-			decimal min;
+			double min;
 
 			min = values[0].AsNumber;
 
@@ -472,6 +474,7 @@ namespace Cottle.Builtins
 					default:
 						return BuiltinFunctions.random.Next ((int)values[0].AsNumber, (int)values[1].AsNumber);
 				}
+				return BuiltinFunctions.random.Next ((int)values[0].AsNumber, (int)values[1].AsNumber);
 			}
 		}, 0, 2);
 

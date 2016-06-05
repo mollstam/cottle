@@ -15,13 +15,13 @@ namespace Cottle.Values
 			}
 		}
 
-		public override decimal			AsNumber
+		public override double			AsNumber
 		{
 			get
 			{
-				decimal number;
+				double number;
 
-				return decimal.TryParse (this.value, NumberStyles.Number, CultureInfo.InvariantCulture, out number) ? number : 0;
+				return double.TryParse (this.value, NumberStyles.Number, CultureInfo.InvariantCulture, out number) ? number : 0;
 			}
 		}
 

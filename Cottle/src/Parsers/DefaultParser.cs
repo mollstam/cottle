@@ -627,7 +627,7 @@ namespace Cottle.Parsers
 			Expression				expression;
 			int						index;
 			Expression				key;
-			decimal					number;
+			double					number;
 			Expression				value;
 
 			switch (this.lexer.Current.Type)
@@ -693,7 +693,7 @@ namespace Cottle.Parsers
 					return this.BuildOperator (BuiltinOperators.operatorSub, expression, this.ParseValue ());
 
 				case LexemType.Number:
-					if (!decimal.TryParse (this.lexer.Current.Content, NumberStyles.Number, CultureInfo.InvariantCulture, out number))
+					if (!double.TryParse (this.lexer.Current.Content, NumberStyles.Number, CultureInfo.InvariantCulture, out number))
 						number = 0;
 
 					expression = new Expression

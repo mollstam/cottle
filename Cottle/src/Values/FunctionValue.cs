@@ -22,7 +22,7 @@ namespace Cottle.Values
 			}
 		}
 
-		public override decimal			AsNumber
+		public override double			AsNumber
 		{
 			get
 			{
